@@ -1,11 +1,12 @@
 on:
     push:
+        branches: [master]
     pull_request:
 name: CI
 jobs:
     flatpak:
         name: "Flatpak"
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-24.04
         container:
             image: bilelmoussaoui/flatpak-github-actions:gnome-44
             options: --privileged
@@ -21,3 +22,4 @@ jobs:
             bundle: KopiaUI.flatpak
             manifest-path: io.kopia.KopiaUI.json
             cache-key: flatpak-builder-${{ github.sha }}
+            upload-artifact: true
