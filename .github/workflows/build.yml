@@ -30,7 +30,7 @@ jobs:
             platforms: ${{ matrix.arch }}
         - uses: flatpak/flatpak-github-actions/flatpak-builder@master
           with:
-            bundle: KopiaUI.flatpak
+            bundle: KopiaUI_${{ matrix.arch }}.flatpak
             manifest-path: io.kopia.KopiaUI.json
             cache-key: flatpak-builder-${{ github.sha }}
             upload-artifact: true
