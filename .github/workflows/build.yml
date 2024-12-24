@@ -34,3 +34,4 @@ jobs:
             manifest-path: io.kopia.KopiaUI.json
             cache-key: flatpak-builder-${{ github.sha }}
             upload-artifact: true
+            arch: ${{ matrix.arch }}
