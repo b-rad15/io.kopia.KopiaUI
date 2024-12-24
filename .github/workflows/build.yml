@@ -28,7 +28,7 @@ jobs:
           uses: docker/setup-qemu-action@v2
           with:
             platforms: ${{ matrix.arch }}
-        - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
+        - uses: flatpak/flatpak-github-actions/flatpak-builder@master
           with:
             bundle: KopiaUI.flatpak
             manifest-path: io.kopia.KopiaUI.json
